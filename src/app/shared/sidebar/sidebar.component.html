@@ -1,0 +1,14 @@
+<!-- Inicio de sidebar -->
+<div class="bg-dark border-right p-3" id="sidebar">
+  <h3 class="text-light">{{ title }}</h3>
+  <hr class="text-white">
+  <!-- <div class="list-group list-reset">
+    <a href="#" class="list-group-item list-group-item-action bg-light text-dark">Dashboard</a>
+  </div> -->
+  <div class="list-group list-reset">
+    <!-- <a href="#" class="list-group-item list-group-item-action bg-light text-dark">Dashboard</a> -->
+    <a *ngFor="let item of historial" href="#" class="list-group-item list-group-item-action bg-light text-dark">{{ item
+      | titlecase }}</a>
+  </div>
+</div>
+<!-- Fin de sidebar -->
