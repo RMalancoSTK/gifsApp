@@ -6,7 +6,9 @@ import { SearchGifsResponde, Gift } from '../interfaces/gifs.interfaces';
   providedIn: 'root',
 })
 export class GifsService {
+  private servicioUrl: string = 'https://api.giphy.com/v1/gifs';
   private apiKey: string = 'eL6eVqWt33u2jfz0fgG4SrN3GhYhoUek';
+
   private _historial: string[] = [];
 
   public resultados: Gift[] = [];
@@ -44,7 +46,9 @@ export class GifsService {
 
     this.http
       .get<SearchGifsResponde>(
-        `https://api.giphy.com/v1/gifs/search?api_key=eL6eVqWt33u2jfz0fgG4SrN3GhYhoUek&q=${query}&limit=10`
+        // `https://api.giphy.com/v1/gifs/search?api_key=eL6eVqWt33u2jfz0fgG4SrN3GhYhoUek&q=${query}&limit=10`
+        `${this.servicioUrl}/search`,
+        { params }
       )
       .subscribe((resp: SearchGifsResponde) => {
         // console.log(resp);
