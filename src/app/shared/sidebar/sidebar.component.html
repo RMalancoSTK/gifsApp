@@ -7,8 +7,8 @@
   </div> -->
   <div class="list-group list-reset">
     <!-- <a href="#" class="list-group-item list-group-item-action bg-light text-dark">Dashboard</a> -->
-    <a *ngFor="let item of historial" href="#" class="list-group-item list-group-item-action bg-light text-dark">{{ item
-      | titlecase }}</a>
+    <a *ngFor="let item of historial" href="#" class="list-group-item list-group-item-action bg-light text-dark"
+      (click)="buscar(item)">{{ item | titlecase }}</a>
   </div>
 </div>
 <!-- Fin de sidebar -->

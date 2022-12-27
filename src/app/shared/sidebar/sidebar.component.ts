@@ -17,4 +17,8 @@ export class SidebarComponent {
   ) {}
 
   title = this.settingsService.title;
+
+  buscar(query: string) {
+    this.gifsService.buscarGifs(query);
+  }
 }
